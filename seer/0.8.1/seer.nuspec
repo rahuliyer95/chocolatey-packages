@@ -28,6 +28,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
     <version>0.8.1</version>
     <!-- <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>-->
+    <packageSourceUrl>https://sourceforge.net/projects/ccseer</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>rahuliyer95</owners>
     <!-- ============================== -->
@@ -38,8 +39,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Corey Chan</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://1218.io</projectUrl>
-    <packageSourceUrl>https://sourceforge.net/projects/ccseer</packageSourceUrl>
-    <iconUrl>https://avatars3.githubusercontent.com/u/15963166?s=460&amp;v=4</iconUrl>
+    <iconUrl>https://imgur.com/a1pI1nr</iconUrl>
     <copyright>2015-2017</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <!-- <licenseUrl></licenseUrl> -->

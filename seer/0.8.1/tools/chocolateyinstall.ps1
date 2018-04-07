@@ -1,9 +1,9 @@
 ﻿$tools = Split-Path $MyInvocation.MyCommand.Definition
-$installFile = Join-Path $tools 'Seer-0.8.1.exe'
+$packageUrl = "https://sourceforge.net/projects/ccseer/files/Seer-0.8.1.exe/download"
  
 $packageArgs = @{
   packageName    = $packageName
-  file           = $installFile
+  url            = $packageUrl
   fileType       = 'EXE'
   validExitCodes = @(0, 3010, 1641)
   silentArgs     = '/S'
@@ -13,4 +13,3 @@ $packageArgs = @{
 }
  
 Install-ChocolateyPackage @packageArgs
-Remove-Item "$installFile"

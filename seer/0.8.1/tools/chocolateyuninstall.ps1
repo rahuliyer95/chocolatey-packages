@@ -1,4 +1,6 @@
-﻿# IMPORTANT: Before releasing this package, copy/paste the next 2 lines into PowerShell to remove all comments from this file:
+﻿Add-Type -AssemblyName microsoft.VisualBasic
+Add-Type -AssemblyName System.Windows.Forms
+# IMPORTANT: Before releasing this package, copy/paste the next 2 lines into PowerShell to remove all comments from this file:
 #   $f='c:\path\to\thisFile.ps1'
 #   gc $f | ? {$_ -notmatch "^\s*#"} | % {$_ -replace '(^.*?)\s*?[^``]#.*','$1'} | Out-File $f+".~" -en utf8; mv -fo $f+".~" $f
 
@@ -15,8 +17,7 @@ $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   softwareName  = 'seer*'  #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
   fileType      = 'EXE' #only one of these: MSI or EXE (ignore MSU for now)
-  # MSI
-  silentArgs    = '/qn /norestart'
+  silentArgs    = ''
   validExitCodes= @(0, 3010, 1605, 1614, 1641) # https://msdn.microsoft.com/en-us/library/aa376931(v=vs.85).aspx
   # OTHERS
   # Uncomment matching EXE type (sorted by most to least common)
@@ -58,6 +59,12 @@ if ($key.Count -eq 1) {
     }
 
     Uninstall-ChocolateyPackage @packageArgs
+    Start-Sleep -Seconds 1
+    [Microsoft.VisualBasic.Interaction]::AppActivate("Seer 0.8.1 uninstall")
+    [System.Windows.Forms.SendKeys]::SendWait("ALT{ADD}Y")
+    Start-Sleep -Seconds 10
+    [Microsoft.VisualBasic.Interaction]::AppActivate("Seer 0.8.1 uninstall")
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
   }
 } elseif ($key.Count -eq 0) {
   Write-Warning "$packageName has already been uninstalled by other means."
