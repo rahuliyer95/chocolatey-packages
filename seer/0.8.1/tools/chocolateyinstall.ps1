@@ -1,5 +1,5 @@
 ﻿$tools = Split-Path $MyInvocation.MyCommand.Definition
-$packageUrl = "https://sourceforge.net/projects/ccseer/files/Seer-0.8.1.exe/download"
+$packageUrl = 'https://sourceforge.net/projects/ccseer/files/Seer-0.8.1.exe/download'
  
 $packageArgs = @{
   packageName    = $packageName
