@@ -26,7 +26,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>1.1</version>
+    <version>1.2</version>
     <!-- <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>-->
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <!--<owners>__REPLACE_YOUR_NAME__</owners>-->
@@ -61,6 +61,12 @@ Hasklig solves the problem the way typographers have always solved ill-fitting c
 Not only can multi-character glyphs be rendered more vividly, other problematic things in monospaced fonts, such as spacing can be corrected.
     </description>
     <releaseNotes>
++ [v1.2](https://github.com/i-tu/Hasklig/releases/tag/1.2)
+Include latest changes from the [Source Code Pro repository](https://github.com/adobe-fonts/source-code-pro/commit/14875b7) master branch.
+The Source Code Versions Hasklig v1.2 is based on are:
+    + Roman 2.032
+    + Italic 1.052
+    + Variable not supported
 + [v1.1](https://github.com/i-tu/Hasklig/releases/tag/1.1)
     + New ligatures `-&gt;&gt;`, `:::`, `&gt;=&gt;`, `&lt;=&lt;`, `&lt;=&gt;`, `&lt;-&gt;`
     + Switched to newer version of calt code by [Nikita Prokopov](https://github.com/tonsky/FiraCode). It "doesn’t apply ligatures to long sequences of chars, e.g. !!!!, &gt;&gt;&gt;&gt;, etc"

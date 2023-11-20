@@ -9,7 +9,7 @@ function Get-CurrentDirectory
 
 Install-ChocolateyZipPackage `
   -PackageName "$env:ChocolateyPackageName" `
-  -Url 'https://github.com/i-tu/Hasklig/releases/download/1.1/Hasklig-1.1.zip' `
+  -Url 'https://github.com/i-tu/Hasklig/releases/download/v1.2/Hasklig-1.2.zip' `
   -Checksum '98ECCEC22BC0AE3838A099A911230F62197E681B6A6C30E5149C52F5FC6A95C3' `
   -ChecksumType 'SHA256' `
   -UnzipLocation $package
