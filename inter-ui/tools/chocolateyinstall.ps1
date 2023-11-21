@@ -9,8 +9,8 @@ function Get-CurrentDirectory
 
 Install-ChocolateyZipPackage `
   -PackageName "$env:ChocolateyPackageName" `
-  -Url 'https://github.com/rsms/inter/releases/download/v2.5/Inter-UI-2.5.zip' `
-  -Checksum '0A8A74623D254FA6DBF92EF8C564E310727013B2A2CF701F76F448568F7D05E7' `
+  -Url 'https://github.com/rsms/inter/releases/download/v4.0/Inter-4.0.zip' `
+  -Checksum 'FF970A5D4561A04F102A7CB781ADBD6AC4E9B6C460914C7A101F15ACB7F7D1A4' `
   -ChecksumType 'SHA256' `
   -UnzipLocation $package
  

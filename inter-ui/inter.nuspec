@@ -26,7 +26,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>2.5</version>
+    <version>4.0</version>
     <!-- <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>-->
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>rahuliyer95</owners>
@@ -35,7 +35,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
     <title>inter</title>
-    <authors>The Inter UI Project Authors, Rasmus</authors>
+    <authors>The Inter Project Authors, Rasmus</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://github.com/rsms/inter</projectUrl>
     <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/hasklig.png</iconUrl>-->
@@ -47,63 +47,24 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
     <!--<mailingListUrl></mailingListUrl>-->
     <bugTrackerUrl>https://github.com/rsms/inter/issues</bugTrackerUrl>
-    <tags>inter fonts inter-ui inter-font-family</tags>
-    <summary>The Inter UI font family</summary>
+    <tags>inter fonts inter inter-font-family</tags>
+    <summary>The Inter font family</summary>
     <description>
-# Inter UI
-
-Inter UI is a typeface specially designed for user interfaces with focus on high legibility of small-to-medium sized text on computer screens.
-
-The family features a tall x-height to aid in readability of mixed-case and lower-case text. Several OpenType features are provided as well, like contextual alternates that adjusts punctuation depending on the shape of surrounding glyphs, slashed zero for when you need to disambiguate "0" from "o", tabular numbers, etc.
-## Design
-
-Inter UI is similar to Roboto, San Francisco, Akkurat, Asap, Lucida Grande and other "UI" typefaces. Some trade-offs were made in order to make this typeface work really well at small sizes:
-
-- Currently not suitable for very large sizes because of some small-scale glyph optimizations (like "pits" and "traps") that help rasterization at small sizes but stand out and interfere at large sizes.
-- Rasterized at sizes below 12px, some stems—like the horizontal center of "E", "F", or vertical center of "m"—are drawn with two semi-opaque pixels instead of one solid. This is because we "prioritize" (optimize for) higher-density rasterizations. If we move these stems to an off-center position—so that they can be drawn sharply at e.g. 11px—text will be less legible at higher resolutions.
-
-Current font styles:
-
-- Regular — master
-  - Italic
-- Medium — derived from Regular and Black by mixing
-  - MediumItalic
-- Bold — derived from Regular and Black by mixing
-  - BoldItalic
-- Black — master
-  - BlackItalic
-
-Future versions may include lighter weights.
-
-### Font metrics
-
-This font was originally designed to work at a specific size: 11px. Thus, the Units per [EM](https://en.wikipedia.org/wiki/Em_(typography)) (UPM) is defined in such a way that a power-of-two multiple of one EM unit ends up at an integer value compared to a pixel. Most fonts are designed with a UPM of either 1000 or 2048. Because of this we picked a value that is as high as possible but also as close as possible to one of those common values (since it's reasonable to assume that some layout engines and rasterizers are optimized for those value magnitudes.) We ended up picking a UPM of 2816 which equates to exactly 256 units per pixel when rasterized for size 11pt at 1x scale. This also means that when rasterized at power-of-two scales (like 2x and 4x) the number of EM units corresponding to a pixel is an integer (128 units for 2x, 64 for 4x, and so on.)
-
-However, as the project progressed and the typeface was put into use, it quickly
-became clear that for anything longer than a short word, it was actually hard to
-read the almost monotonically-spaced letters.
-
-A second major revision was create where the previously-strict rule of geometry being even multiples of 256 was relaxed and now the rule is "try to stick with 128x, if you can't, stick with 64x and if you can't do that either, never go below 16x." This means that Inter UI is now much more variable in pace than it used to be, making it work better at higher resolutions and work much better in longer text, but losing some contrast and sharpness at small sizes.
-
-The glyphs are designed based on this "plan"; most stems and lines will be positioned at EM units that are even multiples of 128, and in a few cases they are at even multiples of 64 or as low as 16.
-
-Metrics:
-
-- UPM:        2816
-- Descender:  -640
-- x-height:   1536
-- Cap height: 2048
-- Ascender:   2688
-
-Translating between EM units and pixels:
-
-- Rasterized at 11px: 1px = 256 units
-- Rasterized at 22px: 1px = 128 units
-- Rasterized at 44px: 1px =  64 units
-
-There's a Figma workspace for glyphs, with configured metrics
+Inter is a typeface carefully crafted &nbsp; designed for computer screens. Inter features a tall x-height to aid in readability of mixed-case and lower-case text. Inter is a variable font with several OpenType features, like contextual alternates that adjusts punctuation depending on the shape of surrounding glyphs, slashed zero for when you need to disambiguate "0" from "o", tabular numbers, etc.
     </description>
     <releaseNotes>
+This is a grand new release, with over two years of work behind it.
+A lot has changed since version 3.x. Thousands of glyphs have been redesigned.
+Here are some highlights, compared to the previous version:
+
+Six additional "Display" designs, assigned to an opsz variable-font axis, exposed as a second family "Inter Display" as static fonts.
+Several new OpenType features
+Humanist-style italics
+Many technical changes (UPM changed to 2048, refined metrics, many improved features, etc)
+Compatibility with version 3
+Even though the UPM (the font's coordinate system) has changed along with metrics, I've done my best to make sure existing uses of Inter version 3 will look as close to identical as possible for small text sizes, in particular run length.
+
+However you should expect to see noticeable differences when switching to Inter version 4.
     </releaseNotes>
     <!-- =============================== -->      
 
